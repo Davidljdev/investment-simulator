@@ -1,79 +1,78 @@
-# Simulador de Inversiones - Next.js
+# Investment Simulator - Next.js
 
-Este es un **simulador de inversiones en bolsa** construido con **Next.js**, **React** y **Plotly.js**, diseñado para ayudar a los inversores a visualizar la evolución de su portafolio a lo largo del tiempo. Permite personalizar aportes, rentabilidades, retiros y impuestos.
-
----
-
-## Características
-
-* Simula el crecimiento de la inversión con **aportes mensuales**, **rentabilidad anual**, **retiros** e **impuestos**.
-* Gráfico interactivo con **Plotly.js** mostrando valores al pasar el cursor y leyenda en la parte inferior.
-* **Interfaz responsiva** construida con cards y controles de entrada.
-* **Card colapsable** con explicación y guía de uso del simulador.
+This is a **stock investment simulator** built with **Next.js**, **React**, and **Plotly.js**, designed to help investors visualize the evolution of their portfolio over time. It allows users to customize contributions, returns, withdrawals, and taxes.
 
 ---
 
-## Librerías / Dependencias
+## Features
 
-Estas son las principales librerías usadas en el proyecto:
-
-* **React** (`react`, `react-dom`) – framework principal.
-* **Next.js** (`next`) – framework de renderizado del lado del servidor.
-* **Plotly.js** (`react-plotly.js`, `plotly.js`) – para gráficos interactivos.
-* **Tailwind CSS** (`tailwindcss`, `postcss`, `autoprefixer`) – para estilos y layout.
-* **Componentes Shadcn/UI** (`@/components/ui/card`, `@/components/ui/input`, `@/components/ui/label`, `@/components/ui/slider`) – componentes UI personalizados.
-* **Dynamic imports** (`next/dynamic`) – para renderizado del gráfico en el cliente.
-* **Utilidades opcionales**: otras librerías helper según tu proyecto (por ejemplo, `classnames`).
+* Simulates investment growth with **monthly contributions**, **annual return**, **withdrawals**, and **taxes**.  
+* Interactive chart powered by **Plotly.js**, showing values on hover and a legend at the bottom.  
+* **Responsive interface** built with cards and input controls.  
+* **Collapsible card** with usage guide and detailed explanation of the simulator.
 
 ---
 
-## Instalación
+## Libraries / Dependencies
 
-1. Clonar el repositorio:
+These are the main libraries used in the project:
+
+* **React** (`react`, `react-dom`) – main framework.  
+* **Next.js** (`next`) – server-side rendering framework.  
+* **Plotly.js** (`react-plotly.js`, `plotly.js`) – for interactive charts.  
+* **Tailwind CSS** (`tailwindcss`, `postcss`, `autoprefixer`) – for styles and layout.  
+* **Shadcn/UI Components** (`@/components/ui/card`, `@/components/ui/input`, `@/components/ui/label`, `@/components/ui/slider`) – custom UI components.  
+* **Dynamic imports** (`next/dynamic`) – to render the chart on the client side.  
+* **Optional utilities**: additional helper libraries as needed (e.g., `classnames`).
+
+---
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-git clone <url-del-repositorio>
-cd <carpeta-del-proyecto>
+git clone <repository-url>
+cd <project-folder>
 ```
 
-2. Instalar dependencias:
+2. Install dependencies:
 
 ```bash
 npm install
 
-# Librerías principales de React y Next.js
+# Core React and Next.js libraries
 npm install react react-dom next
 
-# Plotly.js para gráficos interactivos
+# Plotly.js for interactive charts
 npm install react-plotly.js plotly.js
 
-# Tailwind CSS y dependencias de desarrollo
+# Tailwind CSS and dev dependencies
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
-# Componentes Shadcn/UI (si los usas desde npm)
+# Shadcn/UI components (if used via npm)
 npm install @shadcn/ui
 
-# Utilidades opcionales (ej. manejo de clases dinámicas)
+# Optional utilities (e.g., dynamic class handling)
 npm install classnames
-
 ```
 
-Asegúrate de tener Node.js >= 18.
+Make sure you have Node.js >= 18.
 
-3. Ejecutar el servidor de desarrollo:
+3. Run the development server:
 
 ```bash
 npm run dev
-# o
+# or
 yarn dev
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## Estructura de Carpetas
+## Folder Structure
 
 ```
 /components
@@ -84,44 +83,44 @@ Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
     Label.js
     Slider.js
 /pages
-  index.js           -> página principal con InvestmentSimulator
-/Grafico.js          -> función para crear el gráfico con Plotly
-/Proceso.js          -> lógica de simulación de inversión
-/Variables.js        -> valores por defecto de los parámetros
+  index.js           -> main page with InvestmentSimulator
+/Grafico.js          -> function for creating Plotly charts
+/Proceso.js          -> investment simulation logic
+/Variables.js        -> default parameter values
 ```
 
 ---
 
-## Uso
+## Usage
 
-* Ajusta los valores de **Inversión Inicial**, **Aportes Mensuales**, **Rentabilidad Anual**, etc.
-* Observa cómo el **gráfico** se actualiza en tiempo real.
-* Consulta **Total Acumulado**, **Neto después de impuestos** y **Impuestos estimados**.
-* Expande la **card explicativa** para recibir guía sobre cada parámetro.
-
----
-
-## Notas
-
-* Este proyecto es **educativo** y **no constituye asesoramiento financiero**.
-* Asegúrate de que los valores de **moneda y porcentajes** sean compatibles con tu contexto local.
-* El simulador usa un generador pseudoaleatorio determinista para simular la **frecuencia de aportes**.
+* Adjust the **Initial Investment**, **Monthly Contributions**, **Annual Return**, etc.  
+* Watch how the **chart** updates in real time.  
+* Check **Total Accumulated**, **Net After Taxes**, and **Estimated Taxes**.  
+* Expand the **explanatory card** to see a guide for each parameter.
 
 ---
 
-## Despliegue
+## Notes
 
-* Se puede desplegar en **Vercel**, **Netlify** o cualquier hosting compatible con Next.js:
+* This project is **for educational purposes only** and **does not constitute financial advice**.  
+* Make sure the **currency and percentage values** are adapted to your local context.  
+* The simulator uses a deterministic pseudo-random generator to simulate **contribution frequency**.
+
+---
+
+## Deployment
+
+* Can be deployed to **Vercel**, **Netlify**, or any Next.js-compatible hosting service:
 
 ```bash
 npm run build
 npm run start
 ```
 
-* Vercel detectará automáticamente que es un proyecto Next.js y configurará todo.
+* Vercel will automatically detect that this is a Next.js project and configure everything.
 
 ---
 
-## Licencia
+## License
 
-Licencia David
+Licensed by David, PhD in Nothing.
