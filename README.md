@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Simulador de Inversiones - Next.js
 
-## Getting Started
+Este es un **simulador de inversiones en bolsa** construido con **Next.js**, **React** y **Plotly.js**, diseñado para ayudar a los inversores a visualizar la evolución de su portafolio a lo largo del tiempo. Permite personalizar aportes, rentabilidades, retiros y impuestos.
 
-First, run the development server:
+---
+
+## Características
+
+* Simula el crecimiento de la inversión con **aportes mensuales**, **rentabilidad anual**, **retiros** e **impuestos**.
+* Gráfico interactivo con **Plotly.js** mostrando valores al pasar el cursor y leyenda en la parte inferior.
+* **Interfaz responsiva** construida con cards y controles de entrada.
+* **Card colapsable** con explicación y guía de uso del simulador.
+
+---
+
+## Librerías / Dependencias
+
+Estas son las principales librerías usadas en el proyecto:
+
+* **React** (`react`, `react-dom`) – framework principal.
+* **Next.js** (`next`) – framework de renderizado del lado del servidor.
+* **Plotly.js** (`react-plotly.js`, `plotly.js`) – para gráficos interactivos.
+* **Tailwind CSS** (`tailwindcss`, `postcss`, `autoprefixer`) – para estilos y layout.
+* **Componentes Shadcn/UI** (`@/components/ui/card`, `@/components/ui/input`, `@/components/ui/label`, `@/components/ui/slider`) – componentes UI personalizados.
+* **Dynamic imports** (`next/dynamic`) – para renderizado del gráfico en el cliente.
+* **Utilidades opcionales**: otras librerías helper según tu proyecto (por ejemplo, `classnames`).
+
+---
+
+## Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone <url-del-repositorio>
+cd <carpeta-del-proyecto>
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+
+# Librerías principales de React y Next.js
+npm install react react-dom next
+
+# Plotly.js para gráficos interactivos
+npm install react-plotly.js plotly.js
+
+# Tailwind CSS y dependencias de desarrollo
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# Componentes Shadcn/UI (si los usas desde npm)
+npm install @shadcn/ui
+
+# Utilidades opcionales (ej. manejo de clases dinámicas)
+npm install classnames
+
+```
+
+Asegúrate de tener Node.js >= 18.
+
+3. Ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura de Carpetas
 
-## Learn More
+```
+/components
+  /ui
+    Card.js
+    CardContent.js
+    Input.js
+    Label.js
+    Slider.js
+/pages
+  index.js           -> página principal con InvestmentSimulator
+/Grafico.js          -> función para crear el gráfico con Plotly
+/Proceso.js          -> lógica de simulación de inversión
+/Variables.js        -> valores por defecto de los parámetros
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Uso
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Ajusta los valores de **Inversión Inicial**, **Aportes Mensuales**, **Rentabilidad Anual**, etc.
+* Observa cómo el **gráfico** se actualiza en tiempo real.
+* Consulta **Total Acumulado**, **Neto después de impuestos** y **Impuestos estimados**.
+* Expande la **card explicativa** para recibir guía sobre cada parámetro.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Este proyecto es **educativo** y **no constituye asesoramiento financiero**.
+* Asegúrate de que los valores de **moneda y porcentajes** sean compatibles con tu contexto local.
+* El simulador usa un generador pseudoaleatorio determinista para simular la **frecuencia de aportes**.
+
+---
+
+## Despliegue
+
+* Se puede desplegar en **Vercel**, **Netlify** o cualquier hosting compatible con Next.js:
+
+```bash
+npm run build
+npm run start
+```
+
+* Vercel detectará automáticamente que es un proyecto Next.js y configurará todo.
+
+---
+
+## Licencia
+
+Licencia David
